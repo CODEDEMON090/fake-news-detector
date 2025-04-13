@@ -14,6 +14,8 @@ from sklearn.metrics import accuracy_score
 # Load Data
 ur1 = 'https://drive.google.com/uc?id=105Pg07PqFa0540QHi3aN_QkvAjk-3P3i'
 news_df = pd.read_csv(ur1)
+st.subheader("🧾 Column Names:")
+st.write(news_df.columns)
 news_df = news_df.fillna(' ')
 news_df['content'] = news_df['title'] + " " + news_df['text']
 X = news_df.drop('label', axis=1)
