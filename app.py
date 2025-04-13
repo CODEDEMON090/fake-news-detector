@@ -18,8 +18,6 @@ gdown.download(f"https://drive.google.com/uc?id={file_id}", "WELFake_Dataset.csv
 
 # Load Data
 news_df = pd.read_csv('WELFake_Dataset.csv')
-st.subheader("🧾 Column Names:")
-st.write(news_df.columns)
 news_df = news_df.fillna(' ')
 news_df['content'] = news_df['title'] + " " + news_df['text']
 X = news_df.drop('label', axis=1)
