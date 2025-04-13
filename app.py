@@ -10,10 +10,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import gdown
+
+# Download large file from Google Drive using gdown
+file_id = "105Pg07PqFa0540QHi3aN_QkvAjk-3P3i"
+gdown.download(f"https://drive.google.com/uc?id={file_id}", "WELFake_Dataset.csv", quiet=False)
 
 # Load Data
-ur1 = 'https://drive.google.com/uc?id=105Pg07PqFa0540QHi3aN_QkvAjk-3P3i'
-news_df = pd.read_csv(ur1)
+news_df = pd.read_csv('WELFake_Dataset.csv')
 st.subheader("🧾 Column Names:")
 st.write(news_df.columns)
 news_df = news_df.fillna(' ')
