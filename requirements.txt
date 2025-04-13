@@ -5,3 +5,5 @@ numpy
 scikit-learn
 nltk
 joblib
+seaborn
+re
